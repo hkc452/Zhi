@@ -58,17 +58,21 @@ let App = class extends Component {
 
     render() {
         return (
-            <View style={[styles.f1]}>
-                <Navigator
-                    ref="navigator"
-                    configureScene={(route) => {
-                          return Navigator.SceneConfigs.PushFromRight;
-                    }}
-                    initialRoute={{id:id}}
-                    renderScene={this._renderScene}
+            <View style={[styles.f1,styles.container]}>
 
-
-                />
+                {
+                    // <Text>ZhiHuHu</Text>
+                    // <Navigator
+                    //     ref="navigator"
+                    //     configureScene={(route) => {
+                    //       return Navigator.SceneConfigs.PushFromRight;
+                    // }}
+                    //     initialRoute={{id:id}}
+                    //     renderScene={this._renderScene}
+                    //
+                    //
+                    // />
+                }
             </View>
         )
     }
@@ -76,4 +80,9 @@ let App = class extends Component {
 
 export default connect()(App)
 
-const styles = cssload({})
+const styles = cssload({
+    container:{
+        backgroundColor:'#f7f7f7'
+    }
+
+})
