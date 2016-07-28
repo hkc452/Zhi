@@ -15,6 +15,7 @@ import {
     Text
 } from "react-native";
 import {connect} from "react-redux";
+import TabNavigator from 'react-native-tab-navigator'
 import {bindActionCreators} from "redux";
 import cssload from "css/cssload";
 let App = class extends Component {
@@ -22,7 +23,9 @@ let App = class extends Component {
     constructor(props) {
         super(props);
         // 初始状态
-        this.state = {};
+        this.state = {
+            selectedTab : 'Home'
+        };
     }
 
     _renderScene(route,navigator) {
@@ -59,7 +62,26 @@ let App = class extends Component {
     render() {
         return (
             <View style={[styles.f1,styles.container]}>
+                <TabNavigator>
+                    <TabNavigator.Item
+                        selected={this.state.selectedTab==='Home'}
+                        title="首页"
+                        selectedTitleStyle={styles.cpink}
 
+                        onPress={()=>this.setState({selectedTab:'Home'})}
+                    >
+                        <Text>家</Text>
+                    </TabNavigator.Item>
+                    <TabNavigator.Item
+                        selected={this.state.selectedTab==='Person'}
+                        title="个人"
+                        selectedTitleStyle={styles.cpink}
+
+                        onPress={()=>this.setState({selectedTab:'Person'})}
+                    >
+                        <Text>人</Text>
+                    </TabNavigator.Item>
+                </TabNavigator>
                 {
                     // <Text>ZhiHuHu</Text>
                     // <Navigator
