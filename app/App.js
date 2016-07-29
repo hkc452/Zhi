@@ -17,6 +17,7 @@ import {
 import {connect} from "react-redux";
 import TabNavigator from 'react-native-tab-navigator'
 import {bindActionCreators} from "redux";
+import Icon from 'react-native-vector-icons/Ionicons'
 import cssload from "css/cssload";
 let App = class extends Component {
     // 构造
@@ -67,7 +68,8 @@ let App = class extends Component {
                         selected={this.state.selectedTab==='Home'}
                         title="首页"
                         selectedTitleStyle={styles.cpink}
-
+                        renderIcon = {()=>{<Icon name='ios-home-outline' size={25}/>}}
+                        renderSelectedIcon = {()=>{<Icon name='ios-home-outline' size={25} style={styles.cpink} />}}
                         onPress={()=>this.setState({selectedTab:'Home'})}
                     >
                         <Text>家</Text>
@@ -76,7 +78,8 @@ let App = class extends Component {
                         selected={this.state.selectedTab==='Person'}
                         title="个人"
                         selectedTitleStyle={styles.cpink}
-
+                        renderIcon = {()=>{<Icon name='ios-notifications-outline' size={25} />}}
+                        renderSelectedIcon = {()=>{<Icon name='ios-notifications-outline' size={25} style={styles.cpink}/>}}
                         onPress={()=>this.setState({selectedTab:'Person'})}
                     >
                         <Text>人</Text>
