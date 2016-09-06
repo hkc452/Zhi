@@ -17,7 +17,7 @@ import {
 import TabNavigator from 'react-native-tab-navigator'
 import cssload from "css/cssload";
 import {YIcon} from "component"
-
+import Home from './Home'
 export default class extends Component {
 
 
@@ -36,19 +36,19 @@ export default class extends Component {
             <TabNavigator>
                 <TabNavigator.Item
                     selected={this.state.selectedTab === 'Home'}
-                    title="我的"
-                    selectedTitleStyle={styles.cpink}
+                    title="首页"
+                    selectedTitleStyle={styles.czhi}
                     renderIcon={() => <YIcon name='shouye-copy-copy' size={20} />}
-                    renderSelectedIcon={() => <YIcon name='shouye'  size={20}  style={styles.cpink}/>}
+                    renderSelectedIcon={() => <YIcon name='shouye'  size={20}  style={styles.czhi}/>}
                     onPress={() => this.setState({ selectedTab: 'Home'})}>
-                    <Text>家</Text>
+                    <Home/>
                 </TabNavigator.Item>
                 <TabNavigator.Item
                     selected={this.state.selectedTab === 'Person'}
                     title="我的"
-                    selectedTitleStyle={styles.cpink}
+                    selectedTitleStyle={styles.czhi}
                     renderIcon={() => <YIcon name='wode' size={20} />}
-                    renderSelectedIcon={() => <YIcon name='wode2'  size={20}  style={styles.cpink}/>}
+                    renderSelectedIcon={() => <YIcon name='wode2'  size={20}  style={styles.czhi}/>}
                     onPress={() => this.setState({ selectedTab: 'Person'})}>
                     <Text>人</Text>
                 </TabNavigator.Item>

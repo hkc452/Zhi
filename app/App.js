@@ -69,6 +69,7 @@ let App = class extends Component {
     render() {
         return (
             <View style={[styles.f1,styles.container]}>
+                <StatusBar hidden={true} />
                 <Navigator
                     ref="navigator"
                     initialRoute={{id:"Main"}}

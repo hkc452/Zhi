@@ -115,6 +115,7 @@ export default {
     cred:{color:'#e74c3c'},//红色
     cwhite:{color:'#ecf0f1'},//白色
     cgray:{color:'#95a5a6'},//灰色
+    czhi:{color:'rgb(43,123,225)'},//知乎蓝
     //
     
     ccyanH:{color:'#16a085'},
