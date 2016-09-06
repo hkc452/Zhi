@@ -19,6 +19,8 @@ import TabNavigator from 'react-native-tab-navigator'
 import {bindActionCreators} from "redux";
 import Icon from 'react-native-vector-icons/Ionicons'
 import cssload from "css/cssload";
+import {YIcon} from "component"
+import Main from 'module/Main'
 let App = class extends Component {
     // 构造
     constructor(props) {
@@ -30,7 +32,11 @@ let App = class extends Component {
     }
 
     _renderScene(route,navigator) {
-        
+        switch (route.id) {
+            case 'Main':
+                return (<Main navigator={navigator} route={route}/>);
+                break;
+        }
     }
 
     componentWillMount() {
@@ -63,41 +69,11 @@ let App = class extends Component {
     render() {
         return (
             <View style={[styles.f1,styles.container]}>
-                <TabNavigator>
-                    <TabNavigator.Item
-                        selected={this.state.selectedTab==='Home'}
-                        title="首页"
-                        selectedTitleStyle={styles.cpink}
-                        renderIcon = {()=>{<Icon name='ios-home-outline' size={25}/>}}
-                        renderSelectedIcon = {()=>{<Icon name='ios-home-outline' size={25} style={styles.cpink} />}}
-                        onPress={()=>this.setState({selectedTab:'Home'})}
-                    >
-                        <Text>家</Text>
-                    </TabNavigator.Item>
-                    <TabNavigator.Item
-                        selected={this.state.selectedTab==='Person'}
-                        title="个人"
-                        selectedTitleStyle={styles.cpink}
-                        renderIcon = {()=>{<Icon name='ios-notifications-outline' size={25} />}}
-                        renderSelectedIcon = {()=>{<Icon name='ios-notifications-outline' size={25} style={styles.cpink}/>}}
-                        onPress={()=>this.setState({selectedTab:'Person'})}
-                    >
-                        <Text>人</Text>
-                    </TabNavigator.Item>
-                </TabNavigator>
-                {
-                    // <Text>ZhiHuHu</Text>
-                    // <Navigator
-                    //     ref="navigator"
-                    //     configureScene={(route) => {
-                    //       return Navigator.SceneConfigs.PushFromRight;
-                    // }}
-                    //     initialRoute={{id:id}}
-                    //     renderScene={this._renderScene}
-                    //
-                    //
-                    // />
-                }
+                <Navigator
+                    ref="navigator"
+                    initialRoute={{id:"Main"}}
+                    renderScene={this._renderScene}
+                />
             </View>
         )
     }

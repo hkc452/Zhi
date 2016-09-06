@@ -9,6 +9,7 @@
       { "src": "./app/css", "expose": "css" },
       { "src": "./app/utils", "expose": "utils" },
       { "src": "./app/store", "expose": "store" },
+      { "src": "./app/component", "expose": "component" },
     ]]
   ]
 }
