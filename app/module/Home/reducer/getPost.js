@@ -33,8 +33,7 @@ export default function (state = defaultConfig,action){
             posts = posts.concat(nPosts)
             count = count + nCount
             return Object.assign({}, state, {...action.data},{newsListView:newsListView.cloneWithRows(action.data.posts),loading:false,posts,timeStamp,count})
-        default:
-            return state
     }
+    return {...state}
 
 }

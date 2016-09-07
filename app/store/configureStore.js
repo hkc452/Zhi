@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import promise from './promise';
 import array from './array';
 import analytics from './analytics';
-import reducers from 'module';
+import reducers from 'module/reducers';
 import createLogger from 'redux-logger';
 import {persistStore, autoRehydrate} from 'redux-persist';//离线数据保存
 import {AsyncStorage} from 'react-native';

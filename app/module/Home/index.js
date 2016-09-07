@@ -19,7 +19,7 @@ import {
 import cssload from 'css/cssload'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {getPosts} from 'module/Home/action'
+import {getPostsAction} from 'module/Home/action'
 let Home = class extends Component {
 
     constructor(props) {

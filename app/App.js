@@ -15,12 +15,10 @@ import {
     Text
 } from "react-native";
 import {connect} from "react-redux";
-import TabNavigator from 'react-native-tab-navigator'
-import {bindActionCreators} from "redux";
-import Icon from 'react-native-vector-icons/Ionicons'
 import cssload from "css/cssload";
 import {YIcon} from "component"
 import Main from 'module/Main'
+let Toast = require('@remobile/react-native-toast');
 let App = class extends Component {
     // 构造
     constructor(props) {
