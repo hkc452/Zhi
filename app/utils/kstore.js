@@ -5,15 +5,16 @@ import {
     AsyncStorage
 } from 'react-native'
 
-export get = async (name)=>{
+get = async (name)=>{
     let res = await AsyncStorage.getItem(name)
     return res?JSON.parse(res):''
 }
-export set = async (name,val)=>{
+set = async (name,val)=>{
     let store = JSON.stringify(val||{})
     await AsyncStorage.setItem(name,store)
 }
 
-export del = async (name)=>{
+del = async (name)=>{
     return await AsyncStorage.removeItem(name)
 }
+export default { get,set,del }

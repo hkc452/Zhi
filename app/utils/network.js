@@ -5,8 +5,9 @@
 let toQueryString = (obj)=>{
     return obj?Object.keys(obj).sort().map((key)=>{
         var val = obj[key]
-        return key+'='val
-    }).join('&') :''
+        // return key+'='val
+        return `${key}=${val}`
+    }).join('&'):''
 }
 let _http = async (url = '',method = 'GET',data = null,host ='',token ='',contentType = 'application/x-www-form-urlencoded')=>{
     url = host + url
@@ -32,21 +33,19 @@ let _http = async (url = '',method = 'GET',data = null,host ='',token ='',conten
 
 }
 
-
-
-
-export get = async (url,data,host,token)=>{
+ get = async (url,data,host,token)=>{
     return _http(url,'GET',data,host,token)
 }
-export post = async (url,data,host,token)=>{
+ post = async (url,data,host,token)=>{
     return _http(url,'POST',data,host,token)
 }
-export put = async (url,data,host,token)=>{
+ put = async (url,data,host,token)=>{
     return _http(url,'PUT',data,host,token)
 }
-export del = async (url,data,host,token)=>{
+ del = async (url,data,host,token)=>{
     return _http(url,'DELETE',data,host,token)
 }
-export file = async (url,data,host,token)=>{
+file = async (url,data,host,token)=>{
     return _http(url,'FILE',data,host,token)
 }
+export default {get,post,put,del,file}
